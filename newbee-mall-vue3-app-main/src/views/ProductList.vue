@@ -87,6 +87,13 @@ const init = async () => {
   });
 
   state.productList = state.productList.concat(list);
+  console.log(state.productList.length);
+  for (let i = 0; i < state.productList.length; i++) {
+    let str = '' + state.productList[i].goodsCoverImg;
+    str = str.replace('localhost', window.location.hostname);
+    console.log(str);
+    state.productList[i].goodsCoverImg = str;
+  }
   state.totalPage = data.totalPage;
   state.loading = false;
   if (state.page >= data.totalPage) state.finished = true;
@@ -112,6 +119,7 @@ const onLoad = () => {
     state.productList = [];
     state.refreshing = false;
   }
+
   init();
 };
 

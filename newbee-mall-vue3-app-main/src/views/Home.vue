@@ -178,6 +178,7 @@ onMounted(async () => {
     let str = '' + state.swiperList[i].carouselUrl;
     str = str.replace('localhost', window.location.hostname);
     console.log(str);
+    state.swiperList[i].carouselUrl = str;
 
     // let fe = item[0];
     // items.push(fe);
