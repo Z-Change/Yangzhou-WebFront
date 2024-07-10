@@ -41,7 +41,7 @@
         <span>普通快递</span>
       </div>
     </div>
-    <van-card v-for="item in state.detail.newBeeMallOrderItemVOS" :key="item.goodsId"
+    <van-card v-for="item in state.detail.pilipiliMallOrderItemVOS" :key="item.goodsId"
       style="background: #fff" :num="item.goodsCount" :price="item.sellingPrice" desc="全场包邮"
       :title="item.goodsName" :thumb="$filters.prefix(item.goodsCoverImg)" />
     <van-popup v-model:show="state.showPay" position="bottom" :style="{ height: '24%' }">

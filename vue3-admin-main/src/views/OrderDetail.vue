@@ -32,85 +32,68 @@
         </div>
       </el-card>
     </div>
-    <el-table
-      :data="state.tableData"
-      tooltip-effect="dark"
-      style="width: 100%"
-    >
-      <el-table-column
-        label="商品图片"
-      >
+    <el-table :data="state.tableData" tooltip-effect="dark" style="width: 100%">
+      <el-table-column label="商品图片">
         <template #default="scope">
-          <img style="width: 100px" :key="scope.row.goodsId" :src="$filters.prefix(scope.row.goodsCoverImg)" alt="商品主图">
+          <img style="width: 100px" :key="scope.row.goodsId"
+            :src="$filters.prefix(scope.row.goodsCoverImg)" alt="商品主图">
         </template>
       </el-table-column>
-      <el-table-column
-        prop="goodsId"
-        label="商品编号"
-      >
+      <el-table-column prop="goodsId" label="商品编号">
       </el-table-column>
-      <el-table-column
-        prop="goodsName"
-        label="商品名"
-      ></el-table-column>
-      <el-table-column
-        prop="goodsCount"
-        label="商品数量"
-      >
+      <el-table-column prop="goodsName" label="商品名"></el-table-column>
+      <el-table-column prop="goodsCount" label="商品数量">
       </el-table-column>
-      <el-table-column
-        prop="sellingPrice"
-        label="价格"
-      >
+      <el-table-column prop="sellingPrice" label="价格">
       </el-table-column>
     </el-table>
   </el-card>
 </template>
 
 <script setup>
-import { onMounted, reactive } from 'vue'
-import { useRoute } from 'vue-router'
-import axios from '@/utils/axios'
+import { onMounted, reactive } from 'vue';
+import { useRoute } from 'vue-router';
+import axios from '@/utils/axios';
 
-const route = useRoute()
-const { id } = route.query
+const route = useRoute();
+const { id } = route.query;
 const state = reactive({
   data: {},
   tableData: []
-})
+});
 onMounted(() => {
   axios.get(`/orders/${id}`).then(res => {
-    console.log(res)
-    state.data = res
-    state.tableData = res.newBeeMallOrderItemVOS
-  })
-})
+    console.log(res);
+    state.data = res;
+    state.tableData = res.pilipiliMallOrderItemVOS;
+  });
+});
 </script>
 
 <style scoped>
-  .data {
-    display: flex;
-    margin-bottom: 50px;
-  }
-  .data .data-item {
-    flex: 1;
-    margin: 0 10px;
-  }
-  .el-table {
-    border: 1px solid #EBEEF5;
-    border-bottom: none;
-  }
-  .has-gutter th {
-    border-right: 1px solid #EBEEF5;
-  }
+.data {
+  display: flex;
+  margin-bottom: 50px;
+}
+.data .data-item {
+  flex: 1;
+  margin: 0 10px;
+}
+.el-table {
+  border: 1px solid #ebeef5;
+  border-bottom: none;
+}
+.has-gutter th {
+  border-right: 1px solid #ebeef5;
+}
 
-  .has-gutter th:last-child {
-    border-right: none;
-  }
-  .el-table__row td {
-    border-right: 1px solid #EBEEF5;
-  }
-  .el-table__row td:last-child {
-    border-right: none;
-  }
+.has-gutter th:last-child {
+  border-right: none;
+}
+.el-table__row td {
+  border-right: 1px solid #ebeef5;
+}
+.el-table__row td:last-child {
+  border-right: none;
+}
 </style>

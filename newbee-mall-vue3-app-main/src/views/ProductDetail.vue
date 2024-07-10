@@ -191,10 +191,10 @@ const goToCart = async () => {
     }
   }
   .van-action-bar-button--warning {
-    background: linear-gradient(to right, #6bd8d8, @primary);
+    background: linear-gradient(to right, #c3738a, @primary);
   }
   .van-action-bar-button--danger {
-    background: linear-gradient(to right, #0dc3c3, #098888);
+    background: linear-gradient(to right, @primary, #c77f94);
   }
 }
 </style>

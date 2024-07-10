@@ -30,7 +30,7 @@
               <span>订单时间：{{ item.createTime }}</span>
               <span>{{ item.orderStatusString }}</span>
             </div>
-            <van-card v-for="one in item.newBeeMallOrderItemVOS" :key="one.orderId"
+            <van-card v-for="one in item.pilipiliMallOrderItemVOS" :key="one.orderId"
               :num="one.goodsCount" :price="one.sellingPrice" desc="全场包邮" :title="one.goodsName"
               :thumb="$filters.prefix(one.goodsCoverImg)" />
           </div>
