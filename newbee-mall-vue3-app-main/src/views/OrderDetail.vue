@@ -90,6 +90,14 @@ const init = async () => {
   const { id } = route.query;
   const { data } = await getOrderDetail(id);
   state.detail = data;
+  for (let i = 0; i < state.detail.pilipiliMallOrderItemVOS.length; i++) {
+    let str = '' + state.detail.pilipiliMallOrderItemVOS[i].goodsCoverImg;
+    state.detail.pilipiliMallOrderItemVOS[i].goodsCoverImg = str.replace(
+      'localhost',
+      window.location.hostname
+    );
+  }
+  console.log(state.detail.pilipiliMallOrderItemVOS);
   closeToast();
 };
 

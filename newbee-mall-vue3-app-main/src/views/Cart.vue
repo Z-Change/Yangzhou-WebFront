@@ -77,6 +77,16 @@ const init = async () => {
   const { data } = await getCart({ pageNumber: 1 });
   state.list = data;
   state.result = data.map(item => item.cartItemId);
+  for (let i = 0; i < state.list.length; i++) {
+    let str = '' + state.list[i].goodsCoverImg;
+    state.list[i].goodsCoverImg = str.replace(
+      'localhost',
+      window.location.hostname
+    );
+
+    console.log(str);
+    console.log(state.list[i].goodsCoverImg);
+  }
   closeToast();
 };
 

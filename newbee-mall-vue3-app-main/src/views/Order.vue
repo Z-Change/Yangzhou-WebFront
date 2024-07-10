@@ -63,6 +63,16 @@ const loadData = async () => {
     data: { list }
   } = await getOrderList({ pageNumber: state.page, status: state.status });
   state.list = state.list.concat(list);
+  for (let i = 0; i < state.list.length; i++) {
+    for (let j = 0; j < state.list[i].pilipiliMallOrderItemVOS.length; j++) {
+      let str = '' + state.list[i].pilipiliMallOrderItemVOS[j].goodsCoverImg;
+      state.list[i].pilipiliMallOrderItemVOS[j].goodsCoverImg = str.replace(
+        'localhost',
+        window.location.hostname
+      );
+      console.log(state.list[i].pilipiliMallOrderItemVOS);
+    }
+  }
   state.totalPage = data.totalPage;
   state.loading = false;
   if (state.page >= data.totalPage) state.finished = true;

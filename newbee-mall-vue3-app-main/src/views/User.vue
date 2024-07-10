@@ -36,10 +36,10 @@
         <span>地址管理</span>
         <van-icon name="arrow" />
       </li>
-      <li @click="goTo('/about')">
+      <!-- <li @click="goTo('/about')">
         <span>关于我们</span>
         <van-icon name="arrow" />
-      </li>
+      </li> -->
     </ul>
     <nav-bar></nav-bar>
   </div>
