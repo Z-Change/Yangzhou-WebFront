@@ -96,6 +96,14 @@ const init = async () => {
     return;
   }
   state.cartList = list;
+  for (let i = 0; i < state.cartList.length; i++) {
+    let str = '' + state.cartList[i].goodsCoverImg;
+    state.cartList[i].goodsCoverImg = str.replace(
+      'localhost',
+      window.location.hostname
+    );
+  }
+  console.log(state.cartList);
   state.address = address;
   closeToast();
 };
