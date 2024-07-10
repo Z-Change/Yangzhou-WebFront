@@ -96,7 +96,7 @@ const resetForm = () => {
 }
 .head .title {
   font-size: 28px;
-  color: #1baeae;
+  color: #fb7299;
   font-weight: bold;
 }
 .head .tips {

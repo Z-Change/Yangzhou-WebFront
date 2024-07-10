@@ -15,11 +15,11 @@
         <i class="nbicon nbfanhui" @click="goBack"></i>
         <div class="header-search">
           <i class="nbicon nbSearch"></i>
-          <input type="text" class="search-title" v-model="state.keyword" />
+          <van-field type="text" class="search-title" v-model="state.keyword" />
         </div>
         <van-button class="search-btn" @click="getSearch">搜索</van-button>
       </header>
-      <van-tabs type="card" color="#1baeae" @click-tab="changeTab">
+      <van-tabs type="card" color="#FB7299" @click-tab="changeTab">
         <van-tab title="推荐" name=""></van-tab>
         <van-tab title="新品" name="new"></van-tab>
         <van-tab title="价格" name="price"></van-tab>
@@ -163,7 +163,7 @@ const changeTab = ({ name }) => {
       margin: 10px 0;
       padding: 5px 0;
       color: #232326;
-      background: #62a6a6;
+      background: #f8aac0;
       .borderRadius(20px);
       .nbSearch {
         padding: 0 5px 0 20px;
@@ -171,9 +171,10 @@ const changeTab = ({ name }) => {
       }
       .search-title {
         width: 80%;
-        font-size: 12px;
+        font-size: 16px;
         color: #666;
         background: #f7f7f7;
+        text-align: center;
       }
     }
     .icon-More {
