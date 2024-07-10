@@ -92,7 +92,7 @@ router.afterEach((to, from) => {
 
 router.beforeEach((to, from, next) => {
   if (to.path == '/login') {
-    // 如果路径是 /login 则正常执行
+    // 如果路径是 /login 则正常执行.
     next()
   } else {
     // 如果不是 /login，判断是否有 token
