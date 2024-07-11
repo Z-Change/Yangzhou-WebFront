@@ -104,6 +104,7 @@ const init = async () => {
 const handleCancelOrder = id => {
   showConfirmDialog({
     title: '确认取消订单？'
+    // theme: 'round-button'
   })
     .then(() => {
       cancelOrder(id).then(res => {
