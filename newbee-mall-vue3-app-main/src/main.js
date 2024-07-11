@@ -9,6 +9,7 @@ import 'lib-flexible/flexible'
 import './assets/main.css'
 import './common/style/theme.css'
 import 'vant/es/toast/style'
+import 'vant/es/Dialog/style'
 const app = createApp(App)
 
 app.use(createPinia())
@@ -44,6 +45,7 @@ app.use(ActionBarButton)
   .use(Checkbox)
   .use(CheckboxGroup)
   .use(Skeleton)
+
 
 // 全局过滤器
 app.config.globalProperties.$filters = {
