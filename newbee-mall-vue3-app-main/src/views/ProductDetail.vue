@@ -73,6 +73,10 @@ onMounted(async () => {
   const { data } = await getDetail(id);
   data.goodsCarouselList = data.goodsCarouselList.map(i => prefix(i));
   state.detail = data;
+  // let swiper_img = document.getElementsByClassName('swiper-img');
+
+  // console.log(swiper_img);
+  // console.log(state.detail.goodsCarouselList[0])
   cart.updateCart();
 });
 
@@ -80,6 +84,7 @@ nextTick(() => {
   // 一些和DOM有关的东西
   const content = document.querySelector('.detail-content');
   content.scrollTop = 0;
+  // console.log($refs.swiper);
 });
 
 const goBack = () => {
@@ -133,8 +138,10 @@ const goToCart = async () => {
     .detail-swipe-wrap {
       .my-swipe .van-swipe-item {
         img {
-          width: 100%;
-          // height: 300px;
+          display: block;
+          margin: auto;
+          max-width: 50vh;
+          max-height: 50vh;
         }
       }
     }
@@ -184,8 +191,14 @@ const goToCart = async () => {
       }
       .product-content {
         padding: 0 20px;
-        img {
-          width: 100%;
+        p {
+          text-align: center;
+          img {
+            display: block;
+            margin: auto;
+            width: 80%;
+            height: 80%;
+          }
         }
       }
     }
