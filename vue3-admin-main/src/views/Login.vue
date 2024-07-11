@@ -5,7 +5,7 @@
         <img class="logo" src="/dist/PILIPILI.png" />
         <div class="name">
           <div class="title">动漫周边商城</div>
-          <div class="tips">Vue3.0 后台管理系统</div>
+          <div class="tips"></div>
         </div>
       </div>
       <el-form label-position="top" :rules="state.rules" :model="state.ruleForm" ref="loginForm"
