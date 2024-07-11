@@ -4,7 +4,7 @@
       <el-aside class="aside">
         <div class="head">
           <div>
-            <img src="//s.weituibao.com/1582958061265/mlogo.png" alt="logo">
+            <img src="/dist/dashboardlogo.png" alt="logo">
             <span>vue3 admin</span>
           </div>
         </div>
