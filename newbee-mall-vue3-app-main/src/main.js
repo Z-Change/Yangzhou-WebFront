@@ -46,6 +46,7 @@ app.use(ActionBarButton)
   .use(CheckboxGroup)
   .use(Skeleton)
 
+
 // 全局过滤器
 app.config.globalProperties.$filters = {
   prefix(url) {
