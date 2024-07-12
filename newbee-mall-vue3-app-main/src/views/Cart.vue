@@ -1,12 +1,3 @@
-<!--
- * 严肃声明：
- * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
- * 本系统已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
- * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2020 陈尼克 all rights reserved.
- * 版权所有，侵权必究！
- *
--->
 
 <template>
   <div class="cart-box">
@@ -18,8 +9,11 @@
             <van-checkbox :name="item.cartItemId" />
             <div class="good-img"><img :src="$filters.prefix(item.goodsCoverImg)" alt=""></div>
             <div class="good-desc">
-              <div class="good-title">
+              <div class="good-title" style="display: flex; align-items: center;">
                 <span>{{ item.goodsName }}</span>
+                <van-button style="margin-left: auto; margin-right: 10px" plain icon="delete"
+                  type="danger" size="small" class="delete-button"
+                  @click="handleDelCartItem(item.cartItemId)" />
                 <span>x{{ item.goodsCount }}</span>
               </div>
               <div class="good-btn">
@@ -29,9 +23,10 @@
               </div>
             </div>
           </div>
-          <template #right>
-            <van-button square icon="delete" type="danger" class="delete-button"
-              @click="deleteGood(item.cartItemId)" />
+          <template>
+            <!-- <van-button square icon="delete" type="danger" class="delete-button"
+              @click="deleteGood(item.cartItemId)" /> -->
+            <!-- <button class="delete-button" @click="deleteGood(item.cartItemId)">dsf </button> -->
           </template>
         </van-swipe-cell>
       </van-checkbox-group>
@@ -53,7 +48,13 @@
 import { reactive, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart';
-import { showToast, showLoadingToast, closeToast, showFailToast } from 'vant';
+import {
+  showToast,
+  showLoadingToast,
+  closeToast,
+  showFailToast,
+  showConfirmDialog
+} from 'vant';
 import navBar from '@/components/NavBar.vue';
 import sHeader from '@/components/SimpleHeader.vue';
 import { getCart, deleteCartItem, modifyCart } from '@/service/cart';
@@ -67,6 +68,24 @@ const state = reactive({
   result: [],
   checkAll: true
 });
+
+const handleDelCartItem = id => {
+  showConfirmDialog({
+    title: '确认删除商品？'
+    // theme: 'round-button'
+  })
+    .then(() => {
+      deleteGood(id).then(res => {
+        if (res.resultCode == 200) {
+          showSuccessToast('删除成功');
+          init();
+        }
+      });
+    })
+    .catch(() => {
+      // on cancel
+    });
+};
 
 onMounted(() => {
   init();
