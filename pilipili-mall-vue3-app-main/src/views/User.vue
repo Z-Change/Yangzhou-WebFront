@@ -134,6 +134,9 @@ const goTo = (r, query) => {
     padding: 0 20px;
     margin-top: 20px;
     li {
+      span {
+        cursor: pointer;
+      }
       height: 40px;
       line-height: 40px;
       display: flex;

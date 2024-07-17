@@ -3,8 +3,7 @@
 <template>
   <div class="login">
     <s-header :name="state.type == 'login' ? '登录' : '注册'" :back="'/home'"></s-header>
-    <img class="logo" src="https://s.yezgea02.com/1604045825972/pilipili-mall-vue3-app-logo.png"
-      alt="">
+    <img class="logo" src="/pilipili.png" alt="">
     <div v-if="state.type == 'login'" class="login-body login">
       <van-form @submit="onSubmit">
         <van-field v-model="state.username" name="username" label="用户名" placeholder="用户名"

@@ -47,7 +47,7 @@ const draw = () => {
   // 定义paramText
   let imgCode = '';
   // 4.随机产生字符串，并且随机旋转
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 4; i++) {
     // 随机的四个字
     const text = state.pool[randomNum(0, state.pool.length)];
     imgCode += text;
