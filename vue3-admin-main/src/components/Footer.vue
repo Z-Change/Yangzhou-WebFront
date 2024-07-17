@@ -1,8 +1,10 @@
 <template>
   <div class="footer">
-    <div class="left">Copyright © 2019-2021 十三. All rights reserved.</div>
+    <div class="left">非常好后台，这使我的鸡块旋转，爱来自中专422❤❤❤
+      <img src="http://localhost:28019/upload/20240717_08593331.gif" alt="">
+    </div>
     <div class="right">
-      <a target="_blank" href="https://github.com/pilipili-ltd/vue3-admin">vue3-admin Version
+      <a target="_blank" href="https://github.com/Z-Change/Yangzhou-WebFront">vue3-admin Version
         3.0.0</a>
     </div>
   </div>
@@ -19,5 +21,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+}
+
+img {
+  width: 5%;
+  height: 5%;
 }
 </style>
