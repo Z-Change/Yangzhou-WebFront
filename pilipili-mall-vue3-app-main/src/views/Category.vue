@@ -35,8 +35,7 @@
                       <div class="product-item"
                         v-for="(product, index) in products.thirdLevelCategoryVOS" :key="index"
                         @click="selectProduct(product)">
-                        <img src="//s.weituibao.com/1583591077131/%E5%88%86%E7%B1%BB.png"
-                          class="product-img" />
+                        <img src="/classify.png" class="product-img" />
                         <p v-text="product.categoryName" class="product-title"></p>
                       </div>
                     </div>

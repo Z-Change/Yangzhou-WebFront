@@ -5,7 +5,9 @@
       <header class="category-header wrap">
         <i class="nbicon nbfanhui" @click="goBack"></i>
         <div class="header-search">
-          <i class="nbicon nbSearch"></i>
+          <i>
+            <img class='searchicon' src="/search.png" alt="">
+          </i>
           <van-field type="text" class="search-title" v-model="state.keyword" />
         </div>
         <van-button class="search-btn" @click="getSearch">搜索</van-button>
@@ -34,7 +36,7 @@
               </div>
             </div>
           </template>
-          <img class="empty" v-else src="https://s.yezgea02.com/1604041313083/kesrtd.png" alt="搜索">
+          <img class="empty" v-else src="/nothing.svg" alt="搜索">
         </van-list>
       </van-pull-refresh>
     </div>
@@ -164,6 +166,10 @@ const changeTab = ({ name }) => {
       color: #232326;
       background: #f8aac0;
       .borderRadius(20px);
+      .searchicon {
+        max-width: 20px;
+        max-height: 20px;
+      }
       .nbSearch {
         padding: 0 5px 0 20px;
         font-size: 17px;
