@@ -2,7 +2,7 @@
   <div class="login-body">
     <div class="login-container">
       <div class="head">
-        <img class="logo" src="/dist/PILIPILI.png" />
+        <img class="logo" src="/PILIPILI.png" />
         <div class="name">
           <div class="title">动漫周边商城</div>
           <div class="tips"></div>

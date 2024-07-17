@@ -7,5 +7,6 @@ export default {
   },
   release: {
     baseUrl: '//backend-api-02.pilipili.ltd/manage-api/v1' // 正式接口域名
-  }
+  },
+  assetsPublicPath: './'
 }

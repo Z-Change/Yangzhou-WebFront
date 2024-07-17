@@ -31,14 +31,14 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue';
 
-let myChart = null
+let myChart = null;
 
 onMounted(() => {
   if (window.echarts) {
     // 基于准备好的dom，初始化echarts实例
-    myChart = window.echarts.init(document.getElementById('zoom'))
+    myChart = window.echarts.init(document.getElementById('zoom'));
 
     // 指定图表的配置项和数据
     const option = {
@@ -72,7 +72,15 @@ onMounted(() => {
         {
           type: 'category',
           boundaryGap: false,
-          data: ['2021-03-11', '2021-03-12', '2021-03-13', '2021-03-14', '2021-03-15', '2021-03-16', '2021-03-17']
+          data: [
+            '2024-07-11',
+            '2024-07-12',
+            '2024-07-13',
+            '2024-07-14',
+            '2024-07-15',
+            '2024-07-16',
+            '2024-07-17'
+          ]
         }
       ],
       yAxis: [
@@ -136,30 +144,30 @@ onMounted(() => {
           data: [820, 932, 901, 934, 1290, 1330, 1320]
         }
       ]
-    }
+    };
 
     // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option)
-  } 
-})
+    myChart.setOption(option);
+  }
+});
 onUnmounted(() => {
-  myChart.dispose()
-})
+  myChart.dispose();
+});
 </script>
 
 <style scoped>
-  .introduce .order {
-    display: flex;
-    margin-bottom: 50px;
-  }
-  .introduce .order .order-item {
-    flex: 1;
-    margin-right: 20px;
-  }
-  .introduce .order .order-item:last-child{
-    margin-right: 0;
-  }
-  #zoom {
-    min-height: 300px;
-  }
+.introduce .order {
+  display: flex;
+  margin-bottom: 50px;
+}
+.introduce .order .order-item {
+  flex: 1;
+  margin-right: 20px;
+}
+.introduce .order .order-item:last-child {
+  margin-right: 0;
+}
+#zoom {
+  min-height: 300px;
+}
 </style>

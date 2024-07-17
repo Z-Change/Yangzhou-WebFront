@@ -4,7 +4,7 @@
       <el-aside class="aside">
         <div class="head">
           <div>
-            <img src="/dist/dashboardlogo.png" alt="logo">
+            <img src="/dashboardlogo.png" alt="logo">
             <span>狗管理专用</span>
           </div>
         </div>
