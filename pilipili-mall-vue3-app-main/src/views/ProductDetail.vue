@@ -31,7 +31,7 @@
       </div>
     </div>
     <van-action-bar>
-      <van-action-bar-icon icon="chat-o" text="客服" />
+      <van-action-bar-icon icon="chat-o" text="客服" @click="yada()" />
       <van-action-bar-icon icon="cart-o" :badge="!cart.count ? '' : cart.count" @click="goTo()"
         text="购物车" />
       <van-action-bar-button type="warning" @click="handleAddCart" text="加入购物车" />
@@ -47,8 +47,9 @@ import { useCartStore } from '@/stores/cart';
 import { getDetail } from '@/service/good';
 import { addCart } from '@/service/cart';
 import sHeader from '@/components/SimpleHeader.vue';
-import { showSuccessToast } from 'vant';
+import { showSuccessToast, showDialog } from 'vant';
 import { prefix } from '@/common/js/utils';
+
 const route = useRoute();
 const router = useRouter();
 const cart = useCartStore();
@@ -82,6 +83,9 @@ const goBack = () => {
   router.go(-1);
 };
 
+const yada = () => {
+  showDialog({ message: '客服妹妹正在赶来的路上喵~不要着急喵~' });
+};
 const goTo = () => {
   router.push({ path: '/cart' });
 };

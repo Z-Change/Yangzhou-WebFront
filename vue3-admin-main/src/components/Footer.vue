@@ -1,7 +1,8 @@
 <template>
   <div class="footer">
     <div class="left">非常好后台，这使我的鸡块旋转，爱来自中专422❤❤❤
-      <img src="http://localhost:28019/upload/20240717_08593331.gif" alt="">
+      <img src="https://z3763.oss-cn-beijing.aliyuncs.com/imgs/B2F7E7F3A701CCB825A582B9267C8861.gif"
+        alt="">
     </div>
     <div class="right">
       <a target="_blank" href="https://github.com/Z-Change/Yangzhou-WebFront">vue3-admin Version

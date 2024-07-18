@@ -4,6 +4,7 @@ import { ActionBar, ActionBarIcon, ActionBarButton, Divider, Popup, Overlay, Loa
 
 import App from './App.vue'
 import router from './router'
+import { Col, Row, Image as VanImage } from 'vant';
 import 'lib-flexible/flexible'
 
 import './assets/main.css'
@@ -16,6 +17,9 @@ app.use(createPinia())
 app.use(router)
 app.use(ActionBarButton)
   .use(ActionBarIcon)
+  .use(Col)
+  .use(Row)
+  .use(VanImage)
   .use(ActionBar)
   .use(Divider)
   .use(Popup)
