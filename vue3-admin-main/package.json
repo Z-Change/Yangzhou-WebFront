@@ -15,7 +15,8 @@
     "unplugin-vue-components": "^0.22.7",
     "vue": "^3.2.39",
     "vue-router": "^4.1.5",
-    "wangeditor": "^4.6.15"
+    "wangeditor": "^4.6.15",
+    "webpack": "^5.93.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "2.3.3",
